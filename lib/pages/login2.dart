@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:utmexpress/shared/color.dart';
-import 'package:utmexpress/widgets/button.dart';
+import 'package:utmexpress/widgets/textfield.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+import '../widgets/button.dart';
+
+class Login2 extends StatefulWidget {
+  const Login2({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Login2> createState() => _Login2State();
 }
 
-class _LoginState extends State<Login> {
+class _Login2State extends State<Login2> {
   bool isLoginPressed = false;
   bool isGuestPressed = false;
   void buttonPressed(int x) async {
@@ -28,46 +30,29 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColor.maroon[400],
+      //resizeToAvoidBottomInset: false,
 
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget> [
-
-            //gif + logo
+            //logo
             Expanded(
-              flex: 3,
-              child: Stack(
-                alignment: Alignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 50),
-                    child: Image.asset(
-                      'assets/img/puddle.png',
-                      width: double.infinity,
-                    ),
+              flex: MediaQuery.of(context).viewInsets.bottom == 0 ? 3 : 1,
+              child: Center(
+                child: Text(
+                  'UTMExpress',
+                  style: TextStyle(
+                    fontSize: 48,
+                    fontFamily: 'DMSans',
+                    color: MyColor.amber[100],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(100, 0, 80, 50),
-                    child: Image.asset('assets/img/login-logo.gif', fit: BoxFit.cover),
-                  ),
-                  Positioned(
-                    top: 285,
-                    child: Text(
-                      'UTMExpress',
-                      style: TextStyle(
-                        fontSize: 48,
-                        fontFamily: 'DMSans',
-                        color: MyColor.amber[100],
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
 
             Expanded(
-              flex: 2,
+              flex: (MediaQuery.of(context).viewInsets.bottom == 0) ? 2 : 3,
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.grey[200],
@@ -77,23 +62,30 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50),
+                  padding: const EdgeInsets.fromLTRB(50.0, 25.0, 50.0, 0.0),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget> [
+                      TextFieldWidget(
+                        hintText: 'Username',
+                        obscureText: false,
+                        prefixIconData: Icons.account_circle,
+                        suffixIconData: Icons.check,
+
+                      ),
+                      const SizedBox(height: 10.0,),
+                      TextFieldWidget(
+                        hintText: 'Password',
+                        obscureText: true,
+                        prefixIconData: Icons.lock,
+                        suffixIconData: Icons.visibility_off,
+
+                      ),
+                      const SizedBox(height: 20.0,),
                       ButtonWidget(
                         buttonText: "Log In",
                         backgroundColor: MyColor.amber,
                         foregroundColor: Colors.black,
                         shadowColor: (MyColor.amber[600])!,
-                        buttonHeight: 60.0,
-                        onPressed: (){},
-                      ),
-                      ButtonWidget(
-                        buttonText: "Continue as Guest",
-                        backgroundColor: (Colors.grey[300])!,
-                        foregroundColor: Colors.black,
-                        shadowColor: (Colors.grey[400])!,
                         buttonHeight: 60.0,
                         onPressed: (){},
                       ),

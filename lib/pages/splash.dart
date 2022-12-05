@@ -6,17 +6,32 @@ class Splash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: MyColor.maroon,
-      body: Center(
-          child: Text(
-            'UTMExpress',
-            style: TextStyle(
-              fontSize: 48,
-              fontFamily: 'Arial',
-              color: MyColor.amber,
+    return Scaffold(
+      backgroundColor: MyColor.maroon[400],
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget> [
+            Expanded(
+              child: Stack(
+                alignment: Alignment.center,
+                children: <Widget> [
+                  Positioned(
+                      top: 285,
+                      child: Text(
+                        'UTMExpress',
+                        style: TextStyle(
+                          fontFamily: 'DMSans',
+                          fontSize: 48,
+                          color: MyColor.amber[100],
+                        ),
+                      ),
+                  ),
+                ],
+              ),
             ),
-          ),
+          ],
+        ),
       ),
     );
   }
