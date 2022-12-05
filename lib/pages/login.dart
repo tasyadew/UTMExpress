@@ -9,25 +9,24 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  late Offset offset;
-
-  @override
-  initState() {
-    offset = Offset.fromDirection(0.785, 10.0);
-  }
-
-  void animate() async {
-    setState(() {
-      offset = Offset.fromDirection(0.785, 10.0);
-      Future.delayed(Duration(milliseconds: 500));
-      offset = Offset.fromDirection(45.0, 10.0);
-    });
+  bool isLoginPressed = false;
+  bool isGuestPressed = false;
+  void buttonPressed(int x) async {
+    if (x == 0){
+      setState(() { isLoginPressed = true; });
+      await Future.delayed(Duration(milliseconds: 100));
+      setState(() { isLoginPressed = false; });
+    } else if (x == 1){
+      setState(() { isGuestPressed = true; });
+      await Future.delayed(Duration(milliseconds: 100));
+      setState(() { isGuestPressed = false; });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyColor.maroon,
+      backgroundColor: MyColor.maroon[400],
 
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -92,18 +91,19 @@ class _LoginState extends State<Login> {
                               color: (MyColor.amber[600])!,
                               blurRadius: 0.0,
                               spreadRadius: 0.0,
-                              offset: offset
+                              offset: isLoginPressed ? Offset.fromDirection(0.785, 0.0) : Offset.fromDirection(0.785, 10.0),
                             )
                           ],
                         ),
 
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            buttonPressed(0);
+                            //login here
+                          },
                           style: ElevatedButton.styleFrom(
-                            elevation: 10.0,
-
-
-                            shadowColor: MyColor.amber[600],
+                            elevation: 0.0,
+                            shadowColor: Colors.transparent,
                             backgroundColor: MyColor.amber,
                             foregroundColor: Colors.black,
                             textStyle: const TextStyle(
@@ -129,18 +129,19 @@ class _LoginState extends State<Login> {
                                 color: (Colors.grey[400])!,
                                 blurRadius: 0.0,
                                 spreadRadius: 0.0,
-                                offset: offset
+                                offset: isGuestPressed ? Offset.fromDirection(0.785, 0.0) : Offset.fromDirection(0.785, 10.0),
                             )
                           ],
                         ),
 
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            buttonPressed(1);
+                            // Continue guest code here
+                          },
                           style: ElevatedButton.styleFrom(
-                            elevation: 10.0,
-
-
-                            shadowColor: Colors.grey[400],
+                            elevation: 0.0,
+                            shadowColor: Colors.transparent,
                             backgroundColor: Colors.grey[300],
                             foregroundColor: Colors.black,
                             textStyle: const TextStyle(
