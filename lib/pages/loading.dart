@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:utmexpress/shared/color.dart';
 
-class Loading extends StatefulWidget {
+class Loading extends StatelessWidget {
   const Loading({Key? key}) : super(key: key);
 
   @override
-  State<Loading> createState() => _LoadingState();
-}
-
-class _LoadingState extends State<Loading> {
-  @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(
+      backgroundColor: MyColor.maroon,
+      body: Center(
+          child: Text(
+            'UTMExpress',
+            style: TextStyle(
+              fontSize: 48,
+              fontFamily: 'Arial',
+              color: MyColor.amber,
+            ),
+          ),
+      ),
+    );
   }
 }
