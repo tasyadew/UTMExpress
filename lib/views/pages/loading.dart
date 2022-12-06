@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:utmexpress/shared/color.dart';
+import 'package:utmexpress/views/shared/color.dart';
 
 class Loading extends StatefulWidget {
   const Loading({Key? key}) : super(key: key);

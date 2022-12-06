@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:utmexpress/shared/color.dart';
+import 'package:utmexpress/views/shared/color.dart';
 
 class Splash extends StatelessWidget {
   const Splash({Key? key}) : super(key: key);

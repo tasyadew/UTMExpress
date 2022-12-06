@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:utmexpress/shared/color.dart';
-import 'package:utmexpress/widgets/button.dart';
+import 'package:utmexpress/views/shared/color.dart';
+import 'package:utmexpress/models/button.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
