@@ -1,30 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:utmexpress/views/pages/login2.dart';
-import 'package:utmexpress/views/pages/splash.dart';
-import 'package:utmexpress/views/pages/loading.dart';
-import 'package:utmexpress/views/pages/login.dart';
-import 'package:utmexpress/views/pages/home.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:utmexpress/routes/app_pages.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  await GetStorage.init();
+  runApp(
+      GetMaterialApp(
+        initialRoute: AppPages.INITIAL,
+        getPages: AppPages.routes,
+        debugShowCheckedModeBanner: false,
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    return GetMaterialApp(
-      initialRoute: '/login2',
-      routes: {
-        '/': (context) => Splash(),
-        '/loading': (context) => Loading(),
-        '/login': (context) => Login(),
-        '/login2': (context) => Login2(),
-        '/home': (context) => Home(),
-      },
-    );
-  }
-}
 
 
 

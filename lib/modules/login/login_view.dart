@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:utmexpress/views/shared/color.dart';
-import 'package:utmexpress/models/textfield.dart';
-import 'package:utmexpress/models/button.dart';
+import 'package:get/get.dart';
 
-class Login2 extends StatefulWidget {
-  const Login2({Key? key}) : super(key: key);
+import '../../shared/color.dart';
+import '../../widgets/button.dart';
+import '../../widgets/textfield.dart';
+import 'login_controller.dart';
+
+class LoginView extends StatefulWidget {
+  const LoginView({Key? key}) : super(key: key);
 
   @override
-  State<Login2> createState() => _Login2State();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _Login2State extends State<Login2> {
+class _LoginViewState extends State<LoginView> {
   bool isLoginPressed = false;
   bool isGuestPressed = false;
   void buttonPressed(int x) async {
@@ -37,7 +40,7 @@ class _Login2State extends State<Login2> {
           children: <Widget> [
             //logo
             Expanded(
-              flex: MediaQuery.of(context).viewInsets.bottom == 0 ? 3 : 1,
+              flex: MediaQuery.of(context).viewInsets.bottom == 0 ? 3 : 2,
               child: Center(
                 child: Text(
                   'UTMExpress',
@@ -51,7 +54,7 @@ class _Login2State extends State<Login2> {
             ),
 
             Expanded(
-              flex: (MediaQuery.of(context).viewInsets.bottom == 0) ? 2 : 3,
+              flex: (MediaQuery.of(context).viewInsets.bottom == 0) ? 2 : 2,
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.grey[200],
@@ -61,8 +64,9 @@ class _Login2State extends State<Login2> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(50.0, 25.0, 50.0, 0.0),
+                  padding: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 50.0),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget> [
                       TextFieldWidget(
                         hintText: 'Username',
@@ -86,7 +90,9 @@ class _Login2State extends State<Login2> {
                         foregroundColor: Colors.black,
                         shadowColor: (MyColor.amber[600])!,
                         buttonHeight: 60.0,
-                        onPressed: (){},
+                        onPressed: (){
+                          //controller.login();
+                        },
                       ),
                     ],
                   ),

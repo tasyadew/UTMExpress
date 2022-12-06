@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:utmexpress/views/shared/color.dart';
 
-class Loading extends StatefulWidget {
-  const Loading({Key? key}) : super(key: key);
+import '../../shared/color.dart';
+
+class LoadingView extends StatefulWidget {
+  const LoadingView({Key? key}) : super(key: key);
 
   @override
-  State<Loading> createState() => _LoadingState();
+  State<LoadingView> createState() => _LoadingViewState();
 }
 
-class _LoadingState extends State<Loading> {
+class _LoadingViewState extends State<LoadingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

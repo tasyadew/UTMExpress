@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:utmexpress/views/shared/color.dart';
+
+import '../shared/color.dart';
 
 class TextFieldWidget extends StatelessWidget {
   final String hintText;
