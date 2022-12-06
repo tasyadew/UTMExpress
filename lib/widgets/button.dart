@@ -19,7 +19,14 @@ class ButtonWidget extends StatefulWidget {
       }) : super(key: key);
 
   @override
-  State<ButtonWidget> createState() => _ButtonWidgetState(buttonText: buttonText, backgroundColor: backgroundColor, foregroundColor: foregroundColor, shadowColor: shadowColor, onPressed: onPressed, buttonHeight: buttonHeight);
+  State<ButtonWidget> createState() => _ButtonWidgetState(
+      buttonText: buttonText,
+      backgroundColor: backgroundColor,
+      foregroundColor: foregroundColor,
+      shadowColor: shadowColor,
+      onPressed: onPressed,
+      buttonHeight: buttonHeight
+  );
 }
 
 class _ButtonWidgetState extends State<ButtonWidget> {
@@ -46,6 +53,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
     setState(() { _isPressed = true; });
     await Future.delayed(Duration(milliseconds: 100));
     setState(() { _isPressed = false; });
+    //onPressed;
   }
 
   @override
@@ -85,8 +93,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
             padding: EdgeInsets.only(left: _isPressed ? 9.0 : 0.0, top: _isPressed ? 9.0 : 0.0),
             child: TextButton(
               onPressed: () {
+
                 buttonPressed();
-                onPressed;
+                onPressed.call();
               },
               style: TextButton.styleFrom(
                 backgroundColor: Colors.transparent,

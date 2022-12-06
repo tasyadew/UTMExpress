@@ -1,31 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'landing_controller.dart';
 
 import '../../routes/app_pages.dart';
 import '../../shared/color.dart';
 import '../../widgets/button.dart';
 
-class LandingView extends StatefulWidget {
+class LandingView extends GetView<LandingController> {
   const LandingView({Key? key}) : super(key: key);
 
-  @override
-  State<LandingView> createState() => _LandingViewState();
-}
-
-class _LandingViewState extends State<LandingView> {
-  bool isLoginPressed = false;
-  bool isGuestPressed = false;
-  void buttonPressed(int x) async {
-    if (x == 0){
-      setState(() { isLoginPressed = true; });
-      await Future.delayed(const Duration(milliseconds: 100));
-      setState(() { isLoginPressed = false; });
-    } else if (x == 1){
-      setState(() { isGuestPressed = true; });
-      await Future.delayed(const Duration(milliseconds: 100));
-      setState(() { isGuestPressed = false; });
-    }
-  }
+  void login(){print('test');}
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +75,7 @@ class _LandingViewState extends State<LandingView> {
                         shadowColor: (MyColor.amber[600])!,
                         buttonHeight: 60.0,
                         onPressed: (){
-                          Get.to(Routes.LOGIN);
+                          controller.login();
                         },
                       ),
                       ButtonWidget(
@@ -100,7 +84,9 @@ class _LandingViewState extends State<LandingView> {
                         foregroundColor: Colors.black,
                         shadowColor: (Colors.grey[400])!,
                         buttonHeight: 60.0,
-                        onPressed: (){},
+                        onPressed: (){
+                          controller.guest();
+                        },
                       ),
                     ],
                   ),

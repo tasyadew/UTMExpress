@@ -20,8 +20,15 @@ class LandingController extends GetxController {
     super.onClose();
   }
 
-  logout() {
-    getStorge.erase();
+  login() {
+    getStorge.write("id", 1);
+    getStorge.write("name", "test");
     Get.offAllNamed(Routes.LOGIN);
+  }
+
+  guest() {
+    getStorge.write("id", 1);
+    getStorge.write("name", "test");
+    Get.offAllNamed(Routes.HOME);
   }
 }

@@ -24,6 +24,6 @@ class HomeController extends GetxController {
 
   logout() {
     getStorge.erase();
-    Get.offAllNamed(Routes.LOGIN);
+    Get.offAllNamed(Routes.LANDING);
   }
 }

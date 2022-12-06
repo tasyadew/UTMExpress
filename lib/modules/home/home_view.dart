@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import 'home_controller.dart';
 import '../../shared/color.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
 
-  @override
-  State<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +24,10 @@ class _HomeViewState extends State<HomeView> {
       body: SafeArea(
         child: Center(
 
-            child: Text('HOME')
+            child: TextButton(
+              onPressed: (){ controller.logout();},
+              child: Text('Log Out'),
+            ),
         ),
       ),
     );

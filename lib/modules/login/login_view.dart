@@ -6,33 +6,13 @@ import '../../widgets/button.dart';
 import '../../widgets/textfield.dart';
 import 'login_controller.dart';
 
-class LoginView extends StatefulWidget {
+class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
-
-  @override
-  State<LoginView> createState() => _LoginViewState();
-}
-
-class _LoginViewState extends State<LoginView> {
-  bool isLoginPressed = false;
-  bool isGuestPressed = false;
-  void buttonPressed(int x) async {
-    if (x == 0){
-      setState(() { isLoginPressed = true; });
-      await Future.delayed(Duration(milliseconds: 100));
-      setState(() { isLoginPressed = false; });
-    } else if (x == 1){
-      setState(() { isGuestPressed = true; });
-      await Future.delayed(Duration(milliseconds: 100));
-      setState(() { isGuestPressed = false; });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColor.maroon[400],
-      //resizeToAvoidBottomInset: false,
 
       body: SafeArea(
         child: Column(
@@ -40,7 +20,7 @@ class _LoginViewState extends State<LoginView> {
           children: <Widget> [
             //logo
             Expanded(
-              flex: MediaQuery.of(context).viewInsets.bottom == 0 ? 3 : 2,
+              flex: MediaQuery.of(context).viewInsets.bottom == 0 ? 3 : 1,
               child: Center(
                 child: Text(
                   'UTMExpress',
@@ -54,7 +34,7 @@ class _LoginViewState extends State<LoginView> {
             ),
 
             Expanded(
-              flex: (MediaQuery.of(context).viewInsets.bottom == 0) ? 2 : 2,
+              flex: (MediaQuery.of(context).viewInsets.bottom == 0) ? 2 : 3,
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.grey[200],
@@ -91,7 +71,7 @@ class _LoginViewState extends State<LoginView> {
                         shadowColor: (MyColor.amber[600])!,
                         buttonHeight: 60.0,
                         onPressed: (){
-                          //controller.login();
+                          controller.login();
                         },
                       ),
                     ],

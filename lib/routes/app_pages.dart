@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 
 import '../modules/home/home_binding.dart';
 import '../modules/home/home_view.dart';
+import '../modules/landing/landing_binding.dart';
 import '../modules/login/login_view.dart';
 import '../modules/login/login_binding.dart';
 import '../modules/landing/landing_view.dart';
@@ -29,6 +30,7 @@ class AppPages {
     GetPage(
       name: _Paths.LANDING,
       page: () => const LandingView(),
+      binding: LandingBinding(),
     ),
     GetPage(
       name: _Paths.LOGIN,
