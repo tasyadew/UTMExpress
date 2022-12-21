@@ -4,7 +4,7 @@ UTM Bus Shuttle Application
 
 ## Folders
 
-lib folder - holds most of the codes here. contain 4 subfolders:
+### lib folder - holds most of the codes here. contain 4 subfolders:
 1) modules - Contain folders of each module. Using MVC approach, each module folder contains page view, page controller, and page binding.
 2) routes - Contains app_pages and app_routes. Handles page navigation.
 3) shared - Global file. Contain self-defined color palletes. 
