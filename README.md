@@ -2,6 +2,24 @@
 
 UTM Bus Shuttle Application
 
+## Progress
+### iteration 1
+- create UI for splash, landing, login and home page
+- create mobile icon
+- working page navigation
+
+### iteration 2
+- functioning database
+- update home page
+- working map api
+
+### iteration 3
+- change from mobile application to Single Page Application
+- update UI to make it web friendly (for desktop and mobile)
+- update flow: now by default is guest mode, but can log in to use favourite feature
+
+### iteration 4
+
 ## Folders
 
 ### lib folder - holds most of the codes here. contain 1 file (main.dart) and 4 subfolders:
