@@ -35,7 +35,7 @@ class VerticalMenuItem extends StatelessWidget {
               maintainSize: true,
               maintainState: true,
               maintainAnimation: true,
-              child: Container(width: 5, height: 72, color: Colors.black,),
+              child: Container(width: 5, height: 72, color: Colors.white,),
             ),
 
             Expanded(
@@ -63,7 +63,7 @@ class VerticalMenuItem extends StatelessWidget {
                           child: CustomText(
                             text: itemName,
                             color: Colors.black,
-                            weight: FontWeight.w900,
+                            weight: FontWeight.bold,
                           ),
                         ),
                     ],

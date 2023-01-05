@@ -50,9 +50,10 @@ class SideMenu extends StatelessWidget {
               onTap: (){
                 if(!menuController.isActive(itemName)){
                   menuController.changeActiveItemTo(itemName);
-                  if(ResponsiveView.isSmallScreen(context))
+                  if(ResponsiveView.isSmallScreen(context)) {
                     Get.back();
-                  //TODO: go to item name route
+                  }
+                  navigationController.navigateTo(itemName);
                 }
               },
             )).toList(),

@@ -4,4 +4,5 @@ import 'package:flutter/material.dart';
 Color maroon = const Color(0xFF691233);
 Color maroonLight = const Color(0xFF890629);
 Color amber = const Color(0xFFFFCB47);
+Color sand = const Color(0xFFEEE1C6);
 //Color amberDark = const Color(0xFFF4AF00);

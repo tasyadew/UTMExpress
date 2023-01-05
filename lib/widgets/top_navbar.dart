@@ -20,7 +20,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
         Visibility(child: CustomText(
           text: "UTMExpress",
           color: amber,
-          size: 20,
+          size: 24,
           weight: FontWeight.bold,)
         ),
         Expanded(child: Container()),

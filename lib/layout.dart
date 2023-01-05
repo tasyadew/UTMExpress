@@ -3,6 +3,7 @@ import 'package:utmexpress/widgets/large_screen.dart';
 import 'package:utmexpress/widgets/side_menu.dart';
 import 'package:utmexpress/widgets/top_navbar.dart';
 
+import 'helpers/local_navigator.dart';
 import 'helpers/responsiveView.dart';
 
 class SiteLayout extends StatelessWidget {
@@ -16,11 +17,9 @@ class SiteLayout extends StatelessWidget {
       drawer: const Drawer(
         child: SideMenu(),
       ),
-      body:const ResponsiveView(
-        largeScreen: LargeScreen(),
-        smallScreen: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-        ),
+      body:ResponsiveView(
+        largeScreen: const LargeScreen(),
+        smallScreen: localNavigator(),
 
       ),
     );

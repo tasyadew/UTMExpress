@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'custom_text.dart';
+
 class ButtonWidget extends StatelessWidget {
 
   final String text;
@@ -23,20 +25,19 @@ class ButtonWidget extends StatelessWidget {
     return SizedBox(
       width: boxWidth,
       height: boxHeight,
-      child: Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: backgroundColor,
-          ),
-          onPressed: onPressed,
-          child: Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                color: textColor,
-                fontSize: 16,
-              ),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor,
+          elevation: 5,
+          padding: const EdgeInsets.all(10.0),
+        ),
+        onPressed: onPressed,
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+              color: textColor,
+              fontSize: 16,
             ),
           ),
         ),

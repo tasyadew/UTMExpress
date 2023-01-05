@@ -13,10 +13,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_launcher_icons: ^0.11.0
   http: ^0.13.5
-  persistent_bottom_nav_bar: ^5.0.2
-  google_nav_bar: ^5.0.6
   flutter_map: ^3.1.0
   google_fonts: ^3.0.1
+  latlong2: ^0.8.1
+  firebase_core: ^0.4.2+2
+  geolocator: ^6.1.14
+  location: ^2.5.4
+  syncfusion_flutter_maps: ^20.4.42
 
 dev_dependencies:
   flutter_test:
@@ -35,19 +38,19 @@ flutter:
   assets:
      - assets/img/
 
-  fonts:
-    - family: DMSans
-      fonts:
-        - asset: assets/fonts/DMSans-Regular.ttf
-        - asset: assets/fonts/DMSans-Italic.ttf
-          style: italic
-        - asset: assets/fonts/DMSans-Medium.ttf
-          weight: 400
-        - asset: assets/fonts/DMSans-MediumItalic.ttf
-          style: italic
-          weight: 400
-        - asset: assets/fonts/DMSans-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/DMSans-BoldItalic.ttf
-          style: italic
-          weight: 700
+#  fonts:
+#    - family: DMSans
+#      fonts:
+#        - asset: assets/fonts/DMSans-Regular.ttf
+#        - asset: assets/fonts/DMSans-Italic.ttf
+#          style: italic
+#        - asset: assets/fonts/DMSans-Medium.ttf
+#          weight: 400
+#        - asset: assets/fonts/DMSans-MediumItalic.ttf
+#          style: italic
+#          weight: 400
+#        - asset: assets/fonts/DMSans-Bold.ttf
+#          weight: 700
+#        - asset: assets/fonts/DMSans-BoldItalic.ttf
+#          style: italic
+#          weight: 700
