@@ -1,7 +1,7 @@
 # UTMExpress
 
 UTM Bus Shuttle Application
-##### website link: [UTMExpress](https://utmexpress.web.app/)
+#### website link: [UTMExpress](https://utmexpress.web.app/)
 
 
 ## Progress
@@ -27,11 +27,11 @@ UTM Bus Shuttle Application
 
 ## Attribution
 ### Thanks to:
-[© OpenStreetMap](https://www.openstreetmap.org/)\ for map api
+[© OpenStreetMap](https://www.openstreetmap.org/) for map api
 
 ## Tools 
 ### Languages
 1) Dart
 
 ### Libraries
-1) [GetX](https://pub.dev/packages/get)\- State Management Library
+1) [GetX](https://pub.dev/packages/get) - State Management Library
