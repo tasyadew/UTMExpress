@@ -1,7 +1,8 @@
 # UTMExpress
 
 UTM Bus Shuttle Application
-##### website link: utmexpress.web.app
+##### website link: [UTMExpress](https://utmexpress.web.app/)
+
 
 ## Progress
 ### iteration 1
