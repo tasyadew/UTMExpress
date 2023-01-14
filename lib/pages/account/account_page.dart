@@ -13,6 +13,11 @@ class AccountPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           TitleCard(text: "Account"),
+          SizedBox(
+            width: double.infinity,
+              height: 500,
+              child: Image.asset('assets/img/account.png')
+          )
         ],
       ),
     );

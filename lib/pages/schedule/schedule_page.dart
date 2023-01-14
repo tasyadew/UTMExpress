@@ -13,6 +13,11 @@ class SchedulePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           TitleCard(text: "Schedule"),
+          SizedBox(
+              width: double.infinity,
+              height: 700,
+              child: Image.asset('assets/img/schedule.png')
+          ),
         ],
       ),
     );

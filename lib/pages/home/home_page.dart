@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:utmexpress/pages/home/widgets/filter_button.dart';
 // import 'package:location/location.dart';
 // import 'package:syncfusion_flutter_maps/maps.dart';
 import 'package:utmexpress/pages/home/widgets/location_button.dart';
+import 'package:utmexpress/pages/home/widgets/search_button.dart';
+import 'package:utmexpress/pages/home/widgets/search_field.dart';
 
 import '../../widgets/custom_text.dart';
 
@@ -100,6 +103,24 @@ class _HomePageState extends State<HomePage> {
           right: 30,
           child: CurrentLocationButton(function: centerOnLocation),
         ),
+        Positioned(
+          bottom: 130,
+          right: 30,
+          child: FilterButton(function: centerOnLocation),
+        ),
+        Positioned(
+          top: 150,
+          right: 30,
+          child: SearchButton(function: centerOnLocation),
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SearchField(text: 'Enter starting point...',),
+            SearchField(text: 'Enter destination point...',),
+          ],
+        ),
+
       ],
     );
   }

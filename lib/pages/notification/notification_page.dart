@@ -13,6 +13,11 @@ class NotificationPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           TitleCard(text: "Notifications"),
+          SizedBox(
+              width: double.infinity,
+              height: 500,
+              child: Image.asset('assets/img/notification.png')
+          )
         ],
       ),
     );

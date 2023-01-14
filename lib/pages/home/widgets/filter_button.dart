@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:utmexpress/constants/style.dart';
 
-class CurrentLocationButton extends StatefulWidget {
+class FilterButton extends StatefulWidget {
   Function function;
 
-  CurrentLocationButton({super.key, required this.function});
+  FilterButton({super.key, required this.function});
 
   @override
-  State<CurrentLocationButton> createState() => _MapScreenLocation();
+  State<FilterButton> createState() => _MapScreenLocation();
 }
 
-class _MapScreenLocation extends State<CurrentLocationButton> {
+class _MapScreenLocation extends State<FilterButton> {
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class _MapScreenLocation extends State<CurrentLocationButton> {
         onPressed: () async {
           await widget.function();
         },
-        child: const Icon(Icons.my_location),
+        child: const Icon(Icons.filter_list),
       ),
     );
   }

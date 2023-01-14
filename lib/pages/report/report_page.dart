@@ -13,6 +13,11 @@ class ReportPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           TitleCard(text: "Report"),
+          SizedBox(
+              width: double.infinity,
+              height: 700,
+              child: Image.asset('assets/img/report.png')
+          )
         ],
       ),
     );
